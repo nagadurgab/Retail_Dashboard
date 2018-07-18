@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "library(RODBC)\n\ncon <- odbcDriverConnect('driver={SQL Server};server=AXONML-SERVER;database=Retail_Dashboard;uid=axonmluser;pwd=axon*2016BZA',rows_at_time = 100)\n\nbranches <- sqlQuery(con, paste0(\"SELECT branch_name FROM branch_data order by branch_name\"))\n\nbranches <- c(paste0(sort(branches$branch_name)))\n\nbrands <- sqlQuery(con, paste0(\"SELECT brand_name FROM brand_data order by brand_name\"))\n\nbrands <- c(paste0(sort(brands$brand_name)))\n\ngender <- c(\"Male\",\"Female\")\n\ncategories <- c('Casual','Formal','Night Wear','Others','Party','Sports')\n",
+    "created" : 1514372666382.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2465213937",
+    "id" : "4409E4D0",
+    "lastKnownWriteTime" : 1514976890,
+    "last_content_update" : 1514976890783,
+    "path" : "C:/Users/ADMIN/Desktop/Retail_Dashboard/Retail_Dashboard/global.R",
+    "project_path" : "global.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

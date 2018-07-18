@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "\n\n\nycategoryDF1$Day <- sort(ycategoryDF1$Day)\n\nno_days <- nrow(yRevenueDF1)\n\nfor (i in 1:no_days){\n  \n  if(i != ybrandDF1$Day[i]){\n    \n    \n  }\n}\n\n\n\ncategories <- c('Casual','Formal','Night-Wear','Others','Party','Sports')\n\nstr_input5<-categories\nprint(str_input5)\n\nstr_input5<- sQuote(str_input5)\nlibrary(RODBC)\ncon <- odbcDriverConnect('driver={SQL Server};server=AXONML-SERVER;database=Retail_Dashboard;uid=axonmluser;pwd=axon*2016BZA;',rows_at_time = 100)\nycategoryDF1 <- sqlQuery(con,paste0(\"SELECT year(sales_data.sold_date) AS Year,\n                                    sum(sales_data.net_pay) AS Revenue \n                                    FROM item_data,sales_data \n                                    WHERE sales_data.item_id = item_data.item_id and\n                                    item_category = '\", str_input5, \"'\n                                    GROUP BY  year(sales_data.sold_date) \n                                    ORDER BY Year\"))\n\nprint(brands)\n\n\n",
+    "created" : 1514376861709.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1290516183",
+    "id" : "BAF889CE",
+    "lastKnownWriteTime" : 1514974993,
+    "last_content_update" : 1514974993461,
+    "path" : "C:/Users/ADMIN/Desktop/Retail_Dashboard/Retail_Dashboard/test.R",
+    "project_path" : "test.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
